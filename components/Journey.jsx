@@ -182,6 +182,14 @@ const Journey = () => {
             color="#000"
             back="#C5D87C"
             style={{ boxShadow: "1px 1px white, 2px 2px #C5D87C" }}
+            onClick={() => {
+              navigator.clipboard.writeText(
+                "RSVP- Akintunde: +2347065704074 OR Oluwaferanmi: +2348129372598"
+              );
+              alert(
+                "Copied: RSVP- Akintunde: +2347065704074 OR Oluwaferanmi: +2348129372598"
+              );
+            }}
           >
             <PiCashRegister style={{ fontSize: "1.1rem" }} />
             RSVP
@@ -208,6 +216,14 @@ const Journey = () => {
             color="#000"
             back="#C5D87C"
             style={{ boxShadow: "1px 1px white, 2px 2px #C5D87C" }}
+            onClick={() => {
+              navigator.clipboard.writeText(
+                "RSVP- Akintunde: +2347065704074 OR Oluwaferanmi: +2348129372598"
+              );
+              alert(
+                "Copied: RSVP- Akintunde: +2347065704074 OR Oluwaferanmi: +2348129372598"
+              );
+            }}
           >
             <PiCashRegister style={{ fontSize: "1.1rem" }} />
             RSVP

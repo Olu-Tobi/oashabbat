@@ -69,7 +69,7 @@ const Item = styled.div`
   }
 
   @media screen and (max-width: 748px) {
-    width: 11rem;
+    width: 10rem;
     height: 20rem;
   }
 `;
@@ -105,7 +105,7 @@ const Btn = styled.button`
   font-size: 0.6rem;
 
   @media screen and (max-width: 748px) {
-    width: 10rem;
+    width: 9rem;
   }
 `;
 
