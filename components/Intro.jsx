@@ -207,7 +207,7 @@ const Intro = () => {
         <Heading>
           <Header className="ds-font">
             <H1>Join Us in Celebrating Our Love</H1>{" "}
-            <Smile src="/smile.svg" width={2000} height={2000} alt="smile" />
+            {/* <Smile src="/smile.svg" width={2000} height={2000} alt="smile" /> */}
           </Header>
           <P>We are so excited to share our special day with you!</P>
         </Heading>
