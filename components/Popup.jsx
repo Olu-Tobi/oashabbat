@@ -57,6 +57,7 @@ const Popup = ({ children }) => {
             position: "absolute",
             top: "1rem",
             left: "1rem",
+            zIndex: "10",
           }}
         />
         {children}
