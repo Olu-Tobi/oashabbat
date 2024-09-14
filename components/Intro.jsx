@@ -201,7 +201,7 @@ const Intro = () => {
         left="0"
       />
 
-      <FloatM src="/bg3.svg" width={2000} height={2000} alt="float" />
+      <FloatM src="/couple3.webp" width={2000} height={2000} alt="float" />
 
       <Wrapper>
         <Heading>
