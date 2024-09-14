@@ -143,7 +143,7 @@ const Info = () => {
             </P>
             <P>
               <MdOutlineAccessTime style={{ fontSize: "1.2rem" }} />
-              09:00 AM WAT
+              03:00 PM WAT
             </P>
           </Det>
           <Line></Line>
@@ -155,7 +155,7 @@ const Info = () => {
             </P>
             <P>
               <MdOutlineAccessTime style={{ fontSize: "1.2rem" }} />
-              09:00 AM WAT
+              10:00 AM WAT
             </P>
           </Det>
         </Top>
