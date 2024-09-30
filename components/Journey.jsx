@@ -55,11 +55,10 @@ const H2 = styled.h2`
 
 const Img = styled(Image)`
   width: 100%;
-  height: 50rem;
-  object-fit: cover;
+  height: 45rem;
+  object-fit: contain;
   margin-top: 2rem;
   @media screen and (max-width: 1024px) {
-    object-fit: contain;
     height: 28rem;
   }
   @media screen and (max-width: 748px) {

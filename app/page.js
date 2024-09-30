@@ -11,8 +11,9 @@ export default function Home() {
       <Navbar />
       <Intro />
       <Info />
-      <Wishlist />
       <Journey />
+      <Wishlist />
+
       <DDay />
     </>
   );
