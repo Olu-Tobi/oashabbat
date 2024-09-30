@@ -6,14 +6,15 @@ import { PiCashRegister } from "react-icons/pi";
 import { IoImageOutline } from "react-icons/io5";
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Div = styled.div`
   padding: 4rem 0;
   position: relative;
+  overflow-x: hidden;
 
   @media screen and (max-width: 1024px) {
     margin-top: 12rem;
-    overflow-x: hidden;
   }
 
   @media screen and (max-width: 748px) {
@@ -147,6 +148,7 @@ const Btn = styled.button`
 `;
 
 const Journey = () => {
+  const router = useRouter();
   return (
     <Div id="explore">
       <Float
@@ -199,6 +201,7 @@ const Journey = () => {
             color="#fff"
             back="#45144C"
             style={{ width: "14rem" }}
+            onClick={() => router.push("/pre-wedding")}
           >
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
             View Pre-wedding Shoot
@@ -239,6 +242,7 @@ const Journey = () => {
             color="#fff"
             back="#45144C"
             style={{ width: "14rem" }}
+            onClick={() => router.push("/pre-wedding")}
           >
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
             View Pre-wedding Shoot
