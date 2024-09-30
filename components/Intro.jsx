@@ -185,7 +185,7 @@ const Intro = () => {
     <Div>
       <Bg src="/bg1.webp" width={2000} height={2000} alt="background" />
       <Float
-        src="/couple1.svg"
+        src="/couple1.webp"
         width={2000}
         height={2000}
         alt="float"
@@ -193,7 +193,7 @@ const Intro = () => {
         right="0"
       />
       <Float
-        src="/couple2.svg"
+        src="/couple2.webp"
         width={2000}
         height={2000}
         alt="float"
@@ -201,7 +201,7 @@ const Intro = () => {
         left="0"
       />
 
-      <FloatM src="/couple3.svg" width={2000} height={2000} alt="float" />
+      <FloatM src="/couple3.webp" width={2000} height={2000} alt="float" />
 
       <Wrapper>
         <Heading>
