@@ -8,11 +8,13 @@ import { CgMenuLeft } from "react-icons/cg";
 import { CgClose } from "react-icons/cg";
 import Link from "next/link";
 
-const Div = styled.div``;
+const Div = styled.div`
+  background: #fff;
+`;
 const Wrapper = styled.div`
   width: 85%;
   margin: 0 auto;
-  height: 5rem;
+  height: 4.5rem;
 
   display: flex;
   align-items: center;
@@ -50,7 +52,7 @@ const Ul2 = styled.ul`
     flex-direction: column;
     gap: 2rem;
     position: absolute;
-    top: 5rem;
+    top: 4.5rem;
     right: 0;
     width: 18rem;
     height: 40rem;

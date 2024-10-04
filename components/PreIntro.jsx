@@ -37,6 +37,7 @@ const Layer = styled.div`
 
 const H2 = styled.h2`
   font-size: 3rem;
+  text-align: center;
   @media screen and (max-width: 748px) {
     font-size: 2.5rem;
   }
@@ -108,7 +109,7 @@ const PreIntro = () => {
       <Wrapper>
         <Img src="/preWedding/6.jpg" width={2000} height={2000} alt="image" />
         <Layer />
-        <H2 className="ds-font">OA SHABBAT '24</H2>
+        <H2 className="ds-font">OLUWADARA & AYOMIDE</H2>
         <P>NOVEMBER 8TH & 9TH 2024</P>
         <Link href="#show">
           <Btn>VIEW GALLERY</Btn>

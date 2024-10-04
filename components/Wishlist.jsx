@@ -49,7 +49,7 @@ const List = styled.div`
     height: unset;
   }
 
-  @media screen and (max-width: 748px) {
+  @media screen and (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem; /* 4 columns */
   }

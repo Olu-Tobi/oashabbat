@@ -7,8 +7,12 @@ import Link from "next/link";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { BsDownload } from "react-icons/bs";
+import {
+  MdOutlineKeyboardBackspace,
+  MdArrowBack,
+  MdArrowForward,
+} from "react-icons/md"; // Arrows for navigation
 import { useState } from "react";
-import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
 const Div = styled.div`
   display: flex;
@@ -16,6 +20,7 @@ const Div = styled.div`
   align-items: center;
   gap: 5rem;
   padding-bottom: 3rem;
+  background: #0f0f0f;
 `;
 
 const Wrapper = styled.div`
@@ -34,27 +39,43 @@ const Head = styled.div`
 
 const H2 = styled.h2`
   font-size: 1rem;
+  color: #fff;
 `;
 
 const PictureDiv = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.5rem;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive masonry layout */
+  grid-auto-rows: 250px; /* Base height for rows */
+  gap: 1rem; /* Uniform gap between images */
+
   @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 
-  @media screen and (max-width: 748px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 `;
 
 const Img = styled(Image)`
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
+  border-radius: 10px;
+  transition: filter 0.3s ease; /* Smooth transition for hover effect */
+
+  &:hover {
+    filter: brightness(1.2); /* Increases brightness on hover */
+  }
+
+  &:nth-child(2n) {
+    grid-row: span 2;
+  }
 `;
 
 const Download = styled.div`
@@ -62,6 +83,7 @@ const Download = styled.div`
   font-size: 1.5rem;
   cursor: pointer;
   opacity: 0.6;
+  color: #fff;
 
   &:hover {
     opacity: 1;
@@ -74,47 +96,14 @@ const Btn = styled.button`
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  background: #000;
-  border: 1px solid #000;
+  background: transparent;
+  border: 1px solid #fff;
   color: #fff;
   cursor: pointer;
-  //border: none;
 
   width: 10rem;
   height: 2.8rem;
-  box-shadow: 1px 1px white, 2px 2px #000;
-
-  font-family: inherit;
-  position: relative;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    background: #000;
-  }
-  &::before {
-    top: 100%;
-    left: 1px;
-    height: 2px;
-    width: 1px;
-  }
-  &::after {
-    left: 100%;
-    top: 1px;
-    height: 1px;
-    width: 2px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    width: 11rem;
-    height: 3rem;
-  }
-
-  @media screen and (max-width: 748px) {
-    width: 12rem;
-    height: 3.2rem;
-  }
+  box-shadow: 1px 1px white, 2px 2px #fff;
 `;
 
 const ModalOverlay = styled.div`
@@ -123,7 +112,8 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px); /* Adds the blur effect */
+  background: rgba(0, 0, 0, 0.5); /* Dark tinted background */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,7 +122,7 @@ const ModalOverlay = styled.div`
 
 const ModalContent = styled.div`
   position: relative;
-  background: #fff;
+  background: transparent;
   padding: 1rem;
   width: 100%;
   height: 100%;
@@ -153,9 +143,26 @@ const CloseButton = styled(MdOutlineKeyboardBackspace)`
   top: 30px;
   left: 20px;
   font-size: 1.7rem;
-
   cursor: pointer;
-  color: #333;
+  color: #fff;
+`;
+
+const ArrowButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #ccc;
+  }
+
+  ${({ left }) => left && `left: 20px;`}
+  ${({ right }) => right && `right: 20px;`}
 `;
 
 const DownloadButton = styled.button`
@@ -164,7 +171,7 @@ const DownloadButton = styled.button`
   right: 3rem;
   font-size: 1.7rem;
 
-  color: #333;
+  color: #fff;
   background: transparent;
 
   border: none;
@@ -173,18 +180,19 @@ const DownloadButton = styled.button`
   align-items: center;
 
   &:hover {
-    color: #000;
+    color: #ccc;
   }
 `;
 
 const PreShow = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
   const downloadAllImages = async () => {
     const zip = new JSZip();
     const folder = zip.folder("PreWeddingImages");
 
-    // Loop through each image and add it to the zip
     for (let i = 0; i < PreWedding.length; i++) {
-      const imagePath = `${PreWedding[i].image}`; // Correct path
+      const imagePath = `${PreWedding[i].image}`;
       const response = await fetch(imagePath);
       if (!response.ok) {
         console.error(`Failed to fetch image: ${imagePath}`);
@@ -194,24 +202,33 @@ const PreShow = () => {
       folder.file(PreWedding[i].image, blob);
     }
 
-    // Generate the zip and trigger the download
     zip.generateAsync({ type: "blob" }).then((content) => {
       saveAs(content, "PreWeddingImages.zip");
     });
   };
 
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const openModal = (image) => {
-    setSelectedImage(image);
+  const openModal = (index) => {
+    setSelectedImageIndex(index);
   };
 
   const closeModal = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
+  };
+
+  const nextImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === PreWedding.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === 0 ? PreWedding.length - 1 : prevIndex - 1
+    );
   };
 
   const downloadImage = (image) => {
-    saveAs(image, image.split("/").pop()); // Save the image from the path
+    saveAs(image, image.split("/").pop());
   };
 
   return (
@@ -231,7 +248,7 @@ const PreShow = () => {
               width={500}
               height={500}
               alt="image"
-              onClick={() => openModal(item.image)}
+              onClick={() => openModal(i)}
             />
           ))}
         </PictureDiv>
@@ -242,22 +259,34 @@ const PreShow = () => {
         </Link>
       </BtnDiv>
 
-      {selectedImage && (
+      {selectedImageIndex !== null && (
         <ModalOverlay onClick={closeModal}>
           <ModalContent onClick={(e) => e.stopPropagation()}>
+            <ArrowButton left onClick={prevImage}>
+              <MdArrowBack />
+            </ArrowButton>
+
             <DownloadButton
-              onClick={() => downloadImage(selectedImage)}
+              onClick={() =>
+                downloadImage(PreWedding[selectedImageIndex].image)
+              }
               title="Download"
             >
               <BsDownload />
             </DownloadButton>
+
             <CloseButton onClick={closeModal} />
+
             <ModalImg
-              src={selectedImage}
+              src={PreWedding[selectedImageIndex].image}
               width={800}
               height={800}
               alt="Selected"
             />
+
+            <ArrowButton right onClick={nextImage}>
+              <MdArrowForward />
+            </ArrowButton>
           </ModalContent>
         </ModalOverlay>
       )}

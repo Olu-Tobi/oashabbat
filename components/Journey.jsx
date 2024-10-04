@@ -200,10 +200,10 @@ const Journey = () => {
             color="#fff"
             back="#45144C"
             style={{ width: "14rem" }}
-            onClick={() => router.push("/pre-wedding")}
+            onClick={() => router.push("/photobook")}
           >
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
-            View Pre-wedding Shoot
+            View Photo Book
           </Btn>
           <Link href="#gift-us">
             <Btn background="#133503" color="#fff" back="#133503">
@@ -241,10 +241,10 @@ const Journey = () => {
             color="#fff"
             back="#45144C"
             style={{ width: "14rem" }}
-            onClick={() => router.push("/pre-wedding")}
+            onClick={() => router.push("/photobook")}
           >
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
-            View Pre-wedding Shoot
+            View Photo Book
           </Btn>
         </Bottom2>
       </Wrapper>
