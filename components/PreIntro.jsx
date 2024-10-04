@@ -107,7 +107,7 @@ const PreIntro = () => {
   return (
     <Div>
       <Wrapper>
-        <Img src="/preWedding/6.jpg" width={2000} height={2000} alt="image" />
+        <Img src="/6.webp" width={2000} height={2000} alt="image" />
         <Layer />
         <H2 className="ds-font">OLUWADARA & AYOMIDE</H2>
         <P>NOVEMBER 8TH & 9TH 2024</P>
