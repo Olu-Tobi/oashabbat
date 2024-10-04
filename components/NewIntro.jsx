@@ -172,7 +172,7 @@ const NewIntro = () => {
   return (
     <Div>
       <Img
-        src="/preWedding/5.jpg"
+        src="/5.webp"
         width={2000}
         height={2000}
         alt="image"
