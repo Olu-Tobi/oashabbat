@@ -14,7 +14,6 @@ const Div = styled.div`
   overflow-x: hidden;
 
   @media screen and (max-width: 1024px) {
-    margin-top: 12rem;
   }
 
   @media screen and (max-width: 748px) {

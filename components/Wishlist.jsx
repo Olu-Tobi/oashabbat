@@ -14,9 +14,12 @@ import { setTrigger } from "@/redux/slices/triggerSlice";
 const Div = styled.div`
   padding: 5rem 0;
   height: 80rem;
+  @media screen and (max-width: 1024px) {
+    height: unset;
+    padding: 3rem 0;
+  }
   @media screen and (max-width: 748px) {
     padding: 2rem 0 3rem;
-    height: unset;
   }
 `;
 
