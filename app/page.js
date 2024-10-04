@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 1500);
+    }, 2000);
   }, []);
 
   return (
@@ -31,7 +31,7 @@ export default function Home() {
             width: "100vw",
           }}
         >
-          <Image src="/logo.png" width={200} height={200} alt="logo" />
+          <Image src="/logod.svg" width={200} height={200} alt="logo" />
         </div>
       )}
       {loaded && (
