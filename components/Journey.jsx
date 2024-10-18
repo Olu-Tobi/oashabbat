@@ -7,6 +7,7 @@ import { IoImageOutline } from "react-icons/io5";
 import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import JourneyImage from "./JourneyImage";
 
 const Div = styled.div`
   padding: 4rem 0;
@@ -37,7 +38,7 @@ const Float = styled(Image)`
   }
 `;
 const Wrapper = styled.div`
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -45,25 +46,13 @@ const Wrapper = styled.div`
   gap: 2rem;
 
   @media screen and (max-width: 748px) {
-    width: 90%;
+    width: 95%;
   }
 `;
 const H2 = styled.h2`
   font-size: 3rem;
 `;
 
-const Img = styled(Image)`
-  width: 100%;
-  height: 45rem;
-  object-fit: contain;
-  margin-top: 2rem;
-  @media screen and (max-width: 1024px) {
-    height: 28rem;
-  }
-  @media screen and (max-width: 748px) {
-    height: 16rem;
-  }
-`;
 const Desc = styled.p`
   text-align: center;
   font-size: 0.9rem;
@@ -175,7 +164,7 @@ const Journey = () => {
           friends, celebration with family, and now Joy everlasting with God on
           our side.
         </Desc>
-        <Img src="/memories.webp" width={2000} height={2000} alt="memories" />
+        <JourneyImage />
         <Bottom>
           <Btn
             background="#C5D87C"
@@ -199,10 +188,10 @@ const Journey = () => {
             color="#fff"
             back="#45144C"
             style={{ width: "14rem" }}
-            onClick={() => router.push("/photobook")}
+            onClick={() => router.push("/pre-wedding")}
           >
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
-            View Photo Book
+            View Pre-wedding shoot
           </Btn>
           <Link href="#gift-us">
             <Btn background="#133503" color="#fff" back="#133503">
@@ -211,6 +200,8 @@ const Journey = () => {
             </Btn>
           </Link>
         </Bottom>
+
+        {/* for mobile */}
         <Bottom2>
           <Btn
             background="#C5D87C"
@@ -240,10 +231,10 @@ const Journey = () => {
             color="#fff"
             back="#45144C"
             style={{ width: "14rem" }}
-            onClick={() => router.push("/photobook")}
+            onClick={() => router.push("/pre-weding")}
           >
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
-            View Photo Book
+            View Pre-wedding shoot
           </Btn>
         </Bottom2>
       </Wrapper>

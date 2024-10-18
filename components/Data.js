@@ -111,18 +111,18 @@ export const Data = [
   },
 
   {
-    item: "Sets of Cups ",
-    image: "/wishlist/cups.webp",
-    amount: "₦15,000",
+    item: "Rechargable Standing Fan",
+    image: "/wishlist/fan.jpg",
+    amount: "₦90,000",
     dir: "https://selar.co/77w621",
   },
 
-  {
-    item: "Rechargable Standing Fan ",
-    image: "/wishlist/mug.webp",
-    amount: "₦12,000",
-    dir: "",
-  },
+  // {
+  //   item: "Rechargable Standing Fan ",
+  //   image: "/wishlist/mug.webp",
+  //   amount: "₦12,000",
+  //   dir: "",
+  // },
 
   {
     item: "Hand mixer ",
@@ -227,38 +227,38 @@ export const PreWedding = [
     id: 8,
     image: "/preWedding/8.jpg",
   },
-  {
-    id: 9,
-    image: "/preWedding/pro1.jpg",
-  },
+  // {
+  //   id: 9,
+  //   image: "/preWedding/pro1.jpg",
+  // },
 
-  {
-    id: 10,
-    image: "/preWedding/pro2.jpg",
-  },
+  // {
+  //   id: 10,
+  //   image: "/preWedding/pro2.jpg",
+  // },
 
-  {
-    id: 11,
-    image: "/preWedding/pro3.jpg",
-  },
+  // {
+  //   id: 11,
+  //   image: "/preWedding/pro3.jpg",
+  // },
 
-  {
-    id: 13,
-    image: "/preWedding/pro5.jpg",
-  },
+  // {
+  //   id: 13,
+  //   image: "/preWedding/pro5.jpg",
+  // },
 
-  {
-    id: 14,
-    image: "/preWedding/pro6.jpg",
-  },
+  // {
+  //   id: 14,
+  //   image: "/preWedding/pro6.jpg",
+  // },
 
-  {
-    id: 15,
-    image: "/preWedding/pro7.jpg",
-  },
+  // {
+  //   id: 15,
+  //   image: "/preWedding/pro7.jpg",
+  // },
 
-  {
-    id: 16,
-    image: "/preWedding/pro8.jpg",
-  },
+  // {
+  //   id: 16,
+  //   image: "/preWedding/pro8.jpg",
+  // },
 ];
