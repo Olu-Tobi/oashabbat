@@ -231,7 +231,7 @@ const Journey = () => {
             color="#fff"
             back="#45144C"
             style={{ width: "14rem" }}
-            onClick={() => router.push("/pre-weding")}
+            onClick={() => router.push("/pre-wedding")}
           >
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
             View Pre-wedding shoot
