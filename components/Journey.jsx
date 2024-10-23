@@ -193,7 +193,7 @@ const Journey = () => {
             <IoImageOutline style={{ fontSize: "1.1rem" }} />
             View Pre-wedding shoot
           </Btn>
-          <Link href="#gift-us">
+          <Link href="/wishlist">
             <Btn background="#133503" color="#fff" back="#133503">
               <GoGift style={{ fontSize: "1.1rem" }} />
               Gift Us
@@ -220,7 +220,7 @@ const Journey = () => {
             <PiCashRegister style={{ fontSize: "1.1rem" }} />
             RSVP
           </Btn>
-          <Link href="#gift-us">
+          <Link href="/wishlist">
             <Btn background="#133503" color="#fff" back="#133503">
               <GoGift style={{ fontSize: "1.1rem" }} />
               Gift Us

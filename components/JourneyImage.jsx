@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   gap: 1.5rem;
   flex-direction: column;
   backdrop-filter: blur(15px); /* Adds the blur effect */
-  background: #489523;
+  background: #67366e;
   padding: 1rem;
   border-radius: 10px;
   @media screen and (max-width: 1024px) {
