@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { GoGift } from "react-icons/go";
 import { CgMenuLeft } from "react-icons/cg";
 import { CgClose } from "react-icons/cg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Div = styled.div`
   background: #fff;
@@ -125,6 +126,12 @@ const Navbar = () => {
   const [Isfont, setIsFont] = useState(1);
   const [click, setClick] = useState(false);
 
+  const currentRoute = usePathname(); // Get the current route here
+
+  useEffect(() => {
+    currentRoute == "/wishlist" && setIsFont(3);
+  }, []);
+
   return (
     <Div>
       <Wrapper>
@@ -132,7 +139,7 @@ const Navbar = () => {
         <Ul>
           <LiDiv>
             <Li
-              href="#"
+              href="/"
               onClick={() => setIsFont(1)}
               opacity={Isfont == 1 ? "1" : "0.6"}
             >
@@ -140,7 +147,7 @@ const Navbar = () => {
             </Li>
 
             <Li
-              href="#big-day"
+              href="/#big-day"
               onClick={() => setIsFont(2)}
               opacity={Isfont == 2 ? "1" : "0.6"}
             >
@@ -148,7 +155,7 @@ const Navbar = () => {
             </Li>
 
             <Li
-              href="#gift-us"
+              href="/wishlist"
               onClick={() => setIsFont(3)}
               opacity={Isfont == 3 ? "1" : "0.6"}
             >
@@ -156,7 +163,7 @@ const Navbar = () => {
             </Li>
 
             <Li
-              href="#explore"
+              href="/#explore"
               onClick={() => setIsFont(4)}
               opacity={Isfont == 4 ? "1" : "0.6"}
             >
@@ -164,7 +171,7 @@ const Navbar = () => {
             </Li>
           </LiDiv>
 
-          <Link href="#gift-us">
+          <Link href="/wishlist">
             <Btn>
               <GoGift style={{ fontSize: "1.1rem" }} />
               Gift Us
@@ -191,7 +198,7 @@ const Navbar = () => {
           <Ul2>
             <LiDiv>
               <Li
-                href="#"
+                href="/"
                 onClick={() => {
                   setIsFont(1), setClick(false);
                 }}
@@ -201,7 +208,7 @@ const Navbar = () => {
               </Li>
 
               <Li
-                href="#big-day"
+                href="/#big-day"
                 onClick={() => {
                   setIsFont(2), setClick(false);
                 }}
@@ -211,7 +218,7 @@ const Navbar = () => {
               </Li>
 
               <Li
-                href="#gift-us"
+                href="/wishlist"
                 onClick={() => {
                   setIsFont(3), setClick(false);
                 }}
@@ -221,7 +228,7 @@ const Navbar = () => {
               </Li>
 
               <Li
-                href="#explore"
+                href="/#explore"
                 onClick={() => {
                   setIsFont(4), setClick(false);
                 }}
@@ -232,7 +239,7 @@ const Navbar = () => {
             </LiDiv>
 
             <Link
-              href="#gift-us"
+              href="/wishlist"
               onClick={() => {
                 setClick(false);
               }}

@@ -12,8 +12,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setTrigger } from "@/redux/slices/triggerSlice";
 
 const Div = styled.div`
-  padding: 5rem 0;
-  height: 80rem;
+  padding: 4rem 0;
+  height: 84rem;
+  border: 1px solid #c5d87c;
   @media screen and (max-width: 1024px) {
     height: unset;
     padding: 3rem 0;

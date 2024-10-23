@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   gap: 1.5rem;
   flex-direction: column;
   backdrop-filter: blur(15px); /* Adds the blur effect */
-  background-image: url("/preWedding/6.jpg");
+  background: #489523;
   padding: 1rem;
   border-radius: 10px;
   @media screen and (max-width: 1024px) {
@@ -301,10 +301,10 @@ const journeyData = [
     image: "/preWedding/pro8.jpg",
   },
 
-  {
-    year: "Introduction",
-    image: "/journey/intron.webp",
-  },
+  // {
+  //   year: "Introduction",
+  //   image: "/journey/intron.webp",
+  // },
   {
     year: "Introduction",
     image: "/preWedding/pro3.jpg",
