@@ -327,7 +327,7 @@ const bridesMaid = [
     role: " Bridesmaid",
   },
   {
-    image: "/brides/OluwaJobaOlamide.webp",
+    image: "/brides/OluwajobaOlamide.webp",
     name: "OluwaJoba Olamide",
     role: " Bridesmaid",
   },
