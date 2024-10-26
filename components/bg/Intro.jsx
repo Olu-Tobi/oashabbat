@@ -193,7 +193,7 @@ const Intro = () => {
         <Wrapper>
           <Heading isVisible={isVisible}>
             <Header>
-              <P>OASSHABT'24</P>
+              <P>OASHABBAT'24</P>
               <StoryImg
                 src="/elements.png"
                 width={800}
