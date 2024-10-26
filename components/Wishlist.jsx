@@ -14,13 +14,27 @@ import { setTrigger } from "@/redux/slices/triggerSlice";
 const Div = styled.div`
   padding: 4rem 0;
   height: 84rem;
-  border: 1px solid #c5d87c;
+  position: relative;
+
   @media screen and (max-width: 1024px) {
     height: unset;
     padding: 3rem 0;
   }
   @media screen and (max-width: 748px) {
     padding: 2rem 0 3rem;
+  }
+`;
+
+const Back = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
+  @media screen and (max-width: 1024px) {
+    object-fit: cover;
   }
 `;
 
@@ -66,6 +80,7 @@ const Item = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  background: #fff;
   box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.2);
   @media screen and (max-width: 1024px) {
     width: 12rem;
@@ -341,6 +356,7 @@ const Wishlist = () => {
 
   return (
     <Div id="gift-us">
+      <Back src="/bg1.webp" width={2000} height={2000} alt="image" />
       <Wrapper>
         <H2 className="ds-font">Our Wishlist</H2>
         <List>

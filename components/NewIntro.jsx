@@ -11,6 +11,12 @@ const Div = styled.div`
   position: relative;
   height: 100vh;
   overflow: hidden;
+  @media screen and (max-width: 1024px) {
+    height: 70vh;
+  }
+  @media screen and (max-width: 748px) {
+    height: 100vh;
+  }
 `;
 
 const scaleAnimation = keyframes`
@@ -60,7 +66,8 @@ const Layer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00000070;
+
+  background: #00000040;
   z-index: -1;
 `;
 
@@ -98,9 +105,12 @@ const Heading = styled.div`
 `;
 
 const Header = styled.div`
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   width: 70%;
-  position: relative;
+
   color: #fff;
 
   @media screen and (max-width: 1024px) {
@@ -110,6 +120,7 @@ const Header = styled.div`
 
 const H1 = styled.h1`
   font-size: 4.3rem;
+  text-align: center;
 
   @media screen and (max-width: 1024px) {
     font-size: 4rem;
@@ -118,6 +129,12 @@ const H1 = styled.h1`
   @media screen and (max-width: 748px) {
     font-size: 2.3rem;
   }
+`;
+
+const StoryImg = styled(Image)`
+  width: 100%;
+  height: 2.2rem;
+  object-fit: contain;
 `;
 
 const P = styled.p`
@@ -204,6 +221,12 @@ const NewIntro = () => {
           <Heading isVisible={isVisible}>
             <Header className="ds-font">
               <H1>Join Us in Celebrating Our Love</H1>
+              <StoryImg
+                src="/elements.png"
+                width={800}
+                height={800}
+                alt="element"
+              />
             </Header>
             <P>We are so excited to share our special day with you!</P>
           </Heading>

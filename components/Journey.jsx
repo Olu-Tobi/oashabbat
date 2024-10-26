@@ -5,7 +5,7 @@ import { GoGift } from "react-icons/go";
 import { PiCashRegister } from "react-icons/pi";
 import { IoImageOutline } from "react-icons/io5";
 import styled from "styled-components";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import JourneyImage from "./JourneyImage";
 
@@ -18,7 +18,6 @@ const Div = styled.div`
   }
 
   @media screen and (max-width: 748px) {
-    margin-top: unset;
   }
 `;
 const Float = styled(Image)`
@@ -38,7 +37,7 @@ const Float = styled(Image)`
   }
 `;
 const Wrapper = styled.div`
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -46,16 +45,15 @@ const Wrapper = styled.div`
   gap: 2rem;
 
   @media screen and (max-width: 748px) {
-    width: 95%;
   }
 `;
 const H2 = styled.h2`
-  font-size: 3rem;
+  font-size: 3.2rem;
 `;
 
 const Desc = styled.p`
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 
   width: 50%;
   font-weight: 500;
@@ -75,7 +73,7 @@ const Bottom = styled.div`
 
   height: 5rem;
   padding: 0 3rem;
-  margin-top: 2rem;
+
   @media screen and (max-width: 748px) {
     display: none;
   }
@@ -152,9 +150,9 @@ const Journey = () => {
         width={2000}
         height={2000}
         alt="float"
-        top="4rem"
+        top="0rem"
         left="0"
-        topM="8rem"
+        topM="2rem"
         leftM="-8rem"
       />
       <Wrapper>
@@ -165,6 +163,7 @@ const Journey = () => {
           our side.
         </Desc>
         <JourneyImage />
+
         <Bottom>
           <Btn
             background="#C5D87C"
@@ -183,22 +182,24 @@ const Journey = () => {
             <PiCashRegister style={{ fontSize: "1.1rem" }} />
             RSVP
           </Btn>
-          <Btn
-            background="#45144C"
-            color="#fff"
-            back="#45144C"
-            style={{ width: "14rem" }}
-            onClick={() => router.push("/pre-wedding")}
-          >
-            <IoImageOutline style={{ fontSize: "1.1rem" }} />
-            View Pre-wedding shoot
-          </Btn>
-          <Link href="/wishlist">
+          <a href="/pre-wedding">
+            {" "}
+            <Btn
+              background="#45144C"
+              color="#fff"
+              back="#45144C"
+              style={{ width: "14rem" }}
+            >
+              <IoImageOutline style={{ fontSize: "1.1rem" }} />
+              View Pre-wedding shoot
+            </Btn>
+          </a>
+          <a href="/wishlist">
             <Btn background="#133503" color="#fff" back="#133503">
               <GoGift style={{ fontSize: "1.1rem" }} />
               Gift Us
             </Btn>
-          </Link>
+          </a>
         </Bottom>
 
         {/* for mobile */}
@@ -220,22 +221,23 @@ const Journey = () => {
             <PiCashRegister style={{ fontSize: "1.1rem" }} />
             RSVP
           </Btn>
-          <Link href="/wishlist">
+          <a href="/wishlist">
             <Btn background="#133503" color="#fff" back="#133503">
               <GoGift style={{ fontSize: "1.1rem" }} />
               Gift Us
             </Btn>
-          </Link>
-          <Btn
-            background="#45144C"
-            color="#fff"
-            back="#45144C"
-            style={{ width: "14rem" }}
-            onClick={() => router.push("/pre-wedding")}
-          >
-            <IoImageOutline style={{ fontSize: "1.1rem" }} />
-            View Pre-wedding shoot
-          </Btn>
+          </a>
+          <a href="/pre-wedding">
+            <Btn
+              background="#45144C"
+              color="#fff"
+              back="#45144C"
+              style={{ width: "14rem" }}
+            >
+              <IoImageOutline style={{ fontSize: "1.1rem" }} />
+              View Pre-wedding shoot
+            </Btn>
+          </a>
         </Bottom2>
       </Wrapper>
     </Div>

@@ -2,19 +2,6 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-
-import { Autoplay } from "swiper/modules";
-
-// import required modules
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-
 import {
   MdOutlineKeyboardBackspace,
   MdArrowBack,
@@ -32,68 +19,118 @@ const Div = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: column;
-  backdrop-filter: blur(15px); /* Adds the blur effect */
-  background: #67366e;
-  padding: 1rem;
-  border-radius: 10px;
+
   @media screen and (max-width: 1024px) {
-    width: 90%;
   }
 `;
 
 const PictureDiv = styled.div`
   width: 100%;
+  height: 40rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  @media screen and (max-width: 748px) {
+    height: 30rem;
+  }
+`;
+
+const Inner = styled.div`
+  width: 40%;
+  height: 25rem;
+  margin: 0 auto;
+  position: relative;
+  @media screen and (max-width: 1024px) {
+    width: 65%;
+  }
+
+  @media screen and (max-width: 748px) {
+    width: 100%;
+  }
+`;
+
+const CircleDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  position: absolute;
+
+  top: ${(props) => props.top};
+  left: ${(props) => props.left};
+
+  @media screen and (max-width: 748px) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  animation: blink infinite ease-in-out;
+  animation-duration: ${(props) => props.time};
+
+  @keyframes blink {
+    0% {
+      background: rgba(246, 97, 39, 0);
+    }
+    50% {
+      background: #c5d87c70;
+    }
+
+    100% {
+      background: rgba(246, 97, 39, 0);
+    }
+  }
+`;
+const Circle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #538a39;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+
+  @media screen and (max-width: 748px) {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const Year = styled.p`
-  position: absolute;
-  top: 0;
-  left: 0;
-  backdrop-filter: blur(15px);
   text-align: center;
-  background: #00000040;
+
   width: 10rem;
   height: 2.2rem;
   font-size: 2rem;
   font-weight: bolder;
   color: white;
   @media screen and (max-width: 1024px) {
-    top: 1rem;
-    left: 1rem;
   }
 `;
 
 const Img = styled(Image)`
-  width: 50%;
-  height: 35rem;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  cursor: pointer;
-  border-radius: 10px;
-  object-position: 0 0.5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
   @media screen and (max-width: 1024px) {
-    width: 100%;
-    height: 30rem;
   }
 
   @media screen and (max-width: 600px) {
     object-position: unset;
   }
-`;
-
-const Img2 = styled(Image)`
-  width: 100%;
-  height: 7rem;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 10px;
 `;
 
 const ModalOverlay = styled.div`
@@ -120,11 +157,12 @@ const ModalContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 `;
 
 const ModalImg = styled(Image)`
   width: 90%;
-  height: 90%;
+  height: 80%;
   object-fit: contain;
 `;
 
@@ -187,58 +225,23 @@ const JourneyImage = () => {
   return (
     <Div id="show">
       <Wrapper>
-        <Swiper
-          loop={true}
-          spaceBetween={10}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
-          navigation={false}
-          thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Thumbs, Autoplay]}
-          className="mySwiper"
-        >
-          {journeyData.map((item, i) => (
-            <SwiperSlide key={i}>
-              <Year className="ds-font">{item.year}</Year>
-              <PictureDiv>
-                <Img
-                  key={i}
-                  src={item.image}
-                  width={500}
-                  height={500}
-                  alt="image"
-                  onClick={() => openModal(i)}
-                />
-              </PictureDiv>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        {loaded && (
-          <Swiper
-            onSwiper={setThumbsSwiper}
-            loop={true}
-            spaceBetween={10}
-            slidesPerView={4}
-            freeMode={true}
-            watchSlidesProgress={true}
-            modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper"
-          >
+        <PictureDiv>
+          <Inner>
             {journeyData.map((item, i) => (
-              <SwiperSlide key={i}>
-                <Img2
-                  key={i}
-                  src={item.image}
-                  width={500}
-                  height={500}
-                  alt="image"
-                />
-              </SwiperSlide>
+              <CircleDiv
+                top={item.top}
+                left={item.left}
+                time={item.time}
+                key={i}
+                style={{ display: item.top == "null" ? "none" : "flex" }}
+                onClick={() => openModal(i)}
+              >
+                <Circle>{item.year}</Circle>
+              </CircleDiv>
             ))}
-          </Swiper>
-        )}
+          </Inner>
+          <Img src="/6.webp" width={2000} height={2000} alt="image" />
+        </PictureDiv>
       </Wrapper>
 
       {selectedImageIndex !== null && (
@@ -249,6 +252,8 @@ const JourneyImage = () => {
             </ArrowButton>
 
             <CloseButton onClick={closeModal} />
+
+            <Year>{journeyData[selectedImageIndex].year}</Year>
 
             <ModalImg
               src={journeyData[selectedImageIndex].image}
@@ -270,35 +275,110 @@ const JourneyImage = () => {
 export default JourneyImage;
 
 const journeyData = [
-  { year: "2017", image: "/journey/2017.webp" },
-  { year: "2018", image: "/journey/2018.webp" },
-  { year: "2019", image: "/journey/20191.webp" },
-  { year: "2019", image: "/journey/20192.webp" },
-  { year: "2020", image: "/journey/20201.webp" },
-  { year: "2020", image: "/journey/20202.webp" },
-  { year: "2021", image: "/journey/20211.webp" },
-  { year: "2021", image: "/journey/20212.webp" },
-  { year: "2022", image: "/journey/20221.webp" },
-  { year: "2022", image: "/journey/20222.webp" },
   {
-    year: "2023",
+    year: "'17",
+    image: "/journey/2017.webp",
+    top: "15%",
+    left: "15%",
+    time: "2s",
+  },
+  {
+    year: "'18",
+    image: "/journey/2018.webp",
+    top: "15%",
+    left: "40%",
+    time: "3s",
+  },
+  {
+    year: "'19",
+    image: "/journey/20191.webp",
+    top: "15%",
+    left: "65%",
+    time: "4s",
+  },
+  {
+    year: "'19",
+    image: "/journey/20192.webp",
+    top: "45%",
+    left: "15%",
+    time: "3S",
+  },
+  {
+    year: "'20",
+    image: "/journey/20201.webp",
+    top: "45%",
+    left: "40%",
+    time: "2s",
+  },
+  {
+    year: "'20",
+    image: "/journey/20202.webp",
+    top: "null",
+    left: "null",
+    time: "null",
+  },
+  {
+    year: "'21",
+    image: "/journey/20211.webp",
+    top: "45%",
+    left: "65%",
+    time: "4s",
+  },
+  {
+    year: "'21",
+    image: "/journey/20212.webp",
+    top: "null",
+    left: "null",
+    time: "null",
+  },
+  {
+    year: "'22",
+    image: "/journey/20221.webp",
+    top: "75%",
+    left: "15%",
+    time: "3s",
+  },
+  {
+    year: "'22",
+    image: "/journey/20222.webp",
+    top: "null",
+    left: "null",
+    time: "null",
+  },
+  {
+    year: "'23",
     image: "/journey/20231.webp",
+    top: "75%",
+    left: "40%",
+    time: "2s",
   },
   {
-    year: "2023",
+    year: "'23",
     image: "/journey/20232.webp",
+    top: "null",
+    left: "null",
+    time: "null",
   },
   {
-    year: "2023",
+    year: "'23",
     image: "/journey/20233.webp",
+    top: "null",
+    left: "null",
+    time: "null",
   },
   {
-    year: "Proposal",
+    year: "'24",
     image: "/preWedding/pro5.jpg",
+    top: "75%",
+    left: "65%",
+    time: "4s",
   },
   {
-    year: "Proposal",
+    year: "'24",
     image: "/preWedding/pro8.jpg",
+    top: "null",
+    left: "null",
+    time: "null",
   },
 
   // {
@@ -306,7 +386,10 @@ const journeyData = [
   //   image: "/journey/intron.webp",
   // },
   {
-    year: "Introduction",
+    year: "'24",
     image: "/preWedding/pro3.jpg",
+    top: "null",
+    left: "null",
+    time: "null",
   },
 ];

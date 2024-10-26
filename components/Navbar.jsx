@@ -29,7 +29,7 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 6rem;
+  gap: 3rem;
   @media screen and (max-width: 1024px) {
     display: none;
   }
@@ -53,7 +53,7 @@ const Ul2 = styled.ul`
     flex-direction: column;
     gap: 2rem;
     position: absolute;
-    top: 4.5rem;
+    top: 7rem;
     right: 0;
     width: 18rem;
     height: 40rem;
@@ -81,7 +81,7 @@ const LiDiv = styled.div`
 `;
 const Li = styled(Link)`
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   opacity: ${(props) => props.opacity};
   cursor: pointer;
 `;
@@ -122,15 +122,31 @@ const Btn = styled.button`
   }
 `;
 
-const Navbar = () => {
-  const [Isfont, setIsFont] = useState(1);
+const linkOption = [
+  {
+    url: "/",
+    link: "Home",
+  },
+  {
+    url: "/our-story",
+    link: "Our Story",
+  },
+  {
+    url: "/bridesmaids-groomsmen",
+    link: "Bridesmaid & Groomsmen",
+  },
+  {
+    url: "/#explore",
+    link: "Our Journey",
+  },
+  {
+    url: "/pre-wedding",
+    link: "Gallery",
+  },
+];
+
+const Navbar = ({ option }) => {
   const [click, setClick] = useState(false);
-
-  const currentRoute = usePathname(); // Get the current route here
-
-  useEffect(() => {
-    currentRoute == "/wishlist" && setIsFont(3);
-  }, []);
 
   return (
     <Div>
@@ -138,45 +154,23 @@ const Navbar = () => {
         <Logo src="/logod.svg" width={2000} height={2000} alt="logo" />
         <Ul>
           <LiDiv>
-            <Li
-              href="/"
-              onClick={() => setIsFont(1)}
-              opacity={Isfont == 1 ? "1" : "0.6"}
-            >
-              Welcome
-            </Li>
-
-            <Li
-              href="/#big-day"
-              onClick={() => setIsFont(2)}
-              opacity={Isfont == 2 ? "1" : "0.6"}
-            >
-              Big Day
-            </Li>
-
-            <Li
-              href="/wishlist"
-              onClick={() => setIsFont(3)}
-              opacity={Isfont == 3 ? "1" : "0.6"}
-            >
-              Gift Us
-            </Li>
-
-            <Li
-              href="/#explore"
-              onClick={() => setIsFont(4)}
-              opacity={Isfont == 4 ? "1" : "0.6"}
-            >
-              Explore
-            </Li>
+            {linkOption.map((item, i) => (
+              <Li
+                key={i}
+                href={item.url}
+                opacity={option == item.link ? "1" : "0.6"}
+              >
+                {item.link}
+              </Li>
+            ))}
           </LiDiv>
 
-          <Link href="/wishlist">
+          <a href="/wishlist">
             <Btn>
               <GoGift style={{ fontSize: "1.1rem" }} />
               Gift Us
             </Btn>
-          </Link>
+          </a>
         </Ul>
 
         <MenuDiv>
@@ -197,48 +191,19 @@ const Navbar = () => {
         {click && (
           <Ul2>
             <LiDiv>
-              <Li
-                href="/"
-                onClick={() => {
-                  setIsFont(1), setClick(false);
-                }}
-                opacity={Isfont == 1 ? "1" : "0.6"}
-              >
-                Welcome
-              </Li>
-
-              <Li
-                href="/#big-day"
-                onClick={() => {
-                  setIsFont(2), setClick(false);
-                }}
-                opacity={Isfont == 2 ? "1" : "0.6"}
-              >
-                Big Day
-              </Li>
-
-              <Li
-                href="/wishlist"
-                onClick={() => {
-                  setIsFont(3), setClick(false);
-                }}
-                opacity={Isfont == 3 ? "1" : "0.6"}
-              >
-                Gift Us
-              </Li>
-
-              <Li
-                href="/#explore"
-                onClick={() => {
-                  setIsFont(4), setClick(false);
-                }}
-                opacity={Isfont == 4 ? "1" : "0.6"}
-              >
-                Explore
-              </Li>
+              {linkOption.map((item, i) => (
+                <Li
+                  key={i}
+                  href={item.url}
+                  onClick={() => setIsFont(1)}
+                  opacity={option == item.link ? "1" : "0.6"}
+                >
+                  {item.link}
+                </Li>
+              ))}
             </LiDiv>
 
-            <Link
+            <a
               href="/wishlist"
               onClick={() => {
                 setClick(false);
@@ -248,7 +213,7 @@ const Navbar = () => {
                 <GoGift style={{ fontSize: "1.1rem" }} />
                 Gift Us
               </Btn>
-            </Link>
+            </a>
           </Ul2>
         )}
       </Wrapper>
