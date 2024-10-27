@@ -13,7 +13,7 @@ import { setTrigger } from "@/redux/slices/triggerSlice";
 
 const Div = styled.div`
   padding: 4rem 0;
-  height: 84rem;
+
   position: relative;
 
   @media screen and (max-width: 1024px) {
@@ -60,7 +60,7 @@ const List = styled.div`
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   grid-gap: 3rem;
   justify-content: center;
-  height: 73rem;
+
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr); /* 4 columns */
     grid-gap: 2rem;
@@ -408,8 +408,8 @@ const Wishlist = () => {
               Please send your gift(s) to any of the options below:
             </PopH2>
             <PopP>
-              In case you are sending money, please include the item you are
-              sending it for.
+              If you'd like to make a monetary contribution, please specify the
+              item or purpose it's intended for. Thank you!
             </PopP>
             <PopList>
               <PopItem>
@@ -435,18 +435,20 @@ const Wishlist = () => {
 
               <PopItem>
                 <PopTop>
-                  <ItemH2>Opay</ItemH2>
+                  <ItemH2>First bank</ItemH2>
                   <PopText>
-                    <ItemP>8131508027</ItemP>
-                    <ItemP>Woleola Ayomide</ItemP>
+                    <ItemP>3077111769</ItemP>
+                    <ItemP>Adegbite Oluwadara Opeyemi</ItemP>
                   </PopText>
                 </PopTop>
                 <ItemBtn
                   onClick={() => {
                     navigator.clipboard.writeText(
-                      "8131508027 - Woleola Ayomide (Opay)"
+                      "3077111769 - Adegbite Oluwadara Opeyemi (First bank)"
                     );
-                    alert("Copied: 8131508027 - Woleola Ayomide (Opay)");
+                    alert(
+                      "Copied: 3077111769 - Adegbite Oluwadara Opeyemi (First bank)"
+                    );
                   }}
                 >
                   <BsCopy />

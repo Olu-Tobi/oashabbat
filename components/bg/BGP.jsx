@@ -258,7 +258,7 @@ export default Bgp;
 const bridesMaid = [
   {
     image: "/brides/ayan.webp",
-    name: "Adegbite Ayanfe",
+    name: "Adegbite Ayanfejesu",
     role: "Chief Bridesmaid",
   },
   {
@@ -387,6 +387,11 @@ const groomsMen = [
   {
     image: "/grooms/ola.webp",
     name: "Babatunde Olamide",
+    role: "Groomsman",
+  },
+  {
+    image: "/grooms/pog.webp",
+    name: "Odediran PraiseofGod",
     role: "Groomsman",
   },
 ];

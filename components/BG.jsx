@@ -205,7 +205,7 @@ const BG = () => {
                 inView={bridesmaidNameInView}
                 delay="0s"
               >
-                Adegbite Ayanfe
+                Adegbite Ayanfejesu
               </Name>
               <Role
                 ref={bridesmaidRoleRef}

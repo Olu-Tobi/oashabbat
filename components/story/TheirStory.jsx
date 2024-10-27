@@ -130,23 +130,29 @@ const TheirStory = () => {
             partner.
             <br />
             <br />I joined the New Covenant Campus Fellowship, and it was there
-            that I first noticed a petite sister with unparalleled passion for
-            God's work. Her commitment and fervency during the Catch Them Young
-            Program captivated me, and I found myself drawn to her unwavering
-            spirit.
+            that I first noticed a petite sister with an unparalleled passion
+            for God's work. Her commitment and fervency during the Catch Them
+            Young Program captivated me, and I found myself drawn to her
+            unwavering spirit.
             <br />
             <br />
-            Though I was new and shy, the universe conspired to bring us
+            Though I was new and shy, the heavens conspired to bring us
             together. When our pastor announced that one of the sisters on the
             executive was indisposed, I felt compelled to heed the call and
             check on her – lo and behold, it was the very same sister who had
             captured my attention.
             <br />
+            <br />A year later, during a Leadership Training Program, we were
+            placed in the same group, and even more remarkably, we were paired
+            as partners. As our friendship deepened, the lines between teammates
+            and soulmates began to blur. Guided by the wisdom of our leaders and
+            the stirrings within our hearts, seven years of unwavering
+            friendship have paved the way for our arrival at the Shabbat – the
+            Rest of God. From teammates to soulmates, our journey is a testament
+            to divine orchestration.
             <br />
-            That fateful phone call marked the beginning of a profound
-            connection. A year later, during a Leadership Training Program, we
-            were placed in the same group, and even more remarkably, we were
-            paired as partners.
+            Our story is living proof that sometimes, the most beautiful
+            relationships begin with a simple, obedient call.
           </Desc>
         </Right>
       </Wrapper>
@@ -174,7 +180,7 @@ const TheirStory = () => {
             <br />
             <br />
             Our years of intentional friendship have blossomed into a lifetime
-            where faith, love and hope are intertwined.
+            where faith, hope and love are intertwined.
             <br />
             <br />
             Grateful to doing life with the most intentional man.

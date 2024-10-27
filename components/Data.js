@@ -1,24 +1,24 @@
 export const Data = [
-  {
-    item: "50 by 50 Standing Gas Cooker ",
-    image: "/wishlist/cooker.jpg",
-    amount: "",
-    dir: "",
-  },
+  // {
+  //   item: "50 by 50 Standing Gas Cooker ",
+  //   image: "/wishlist/cooker.jpg",
+  //   amount: "",
+  //   dir: "",
+  // },
 
-  {
-    item: "Deep Freezer",
-    image: "/wishlist/freezer.jpg",
-    amount: "",
-    dir: "",
-  },
+  // {
+  //   item: "Deep Freezer",
+  //   image: "/wishlist/freezer.jpg",
+  //   amount: "",
+  //   dir: "",
+  // },
 
-  {
-    item: "Blender ",
-    image: "/wishlist/blender.jpg",
-    amount: "",
-    dir: "",
-  },
+  // {
+  //   item: "Blender ",
+  //   image: "/wishlist/blender.jpg",
+  //   amount: "",
+  //   dir: "",
+  // },
 
   {
     item: "White Royal Design Centre Table",
@@ -27,12 +27,12 @@ export const Data = [
     dir: "",
   },
 
-  {
-    item: "Set of Three Non-Stick Pots with Frying Pan",
-    image: "/wishlist/pan.jpg",
-    amount: "₦70,000",
-    dir: "https://selar.co/19o057",
-  },
+  // {
+  //   item: "Set of Three Non-Stick Pots with Frying Pan",
+  //   image: "/wishlist/pan.jpg",
+  //   amount: "₦70,000",
+  //   dir: "https://selar.co/19o057",
+  // },
 
   {
     item: "Set of Seven Aluminum Thick pots",
@@ -82,19 +82,19 @@ export const Data = [
     dir: "https://selar.co/6c6272",
   },
 
-  {
-    item: "6 litres Air Fryer",
-    image: "/wishlist/fryer.webp",
-    amount: "₦60,000",
-    dir: "https://selar.co/b29c91",
-  },
+  // {
+  //   item: "6 litres Air Fryer",
+  //   image: "/wishlist/fryer.webp",
+  //   amount: "₦60,000",
+  //   dir: "https://selar.co/b29c91",
+  // },
 
-  {
-    item: "2-door Standing Refrigerator ",
-    image: "/wishlist/fridge.jpg",
-    amount: "₦250,000",
-    dir: "https://selar.co/a6s16j",
-  },
+  // {
+  //   item: "2-door Standing Refrigerator ",
+  //   image: "/wishlist/fridge.jpg",
+  //   amount: "₦250,000",
+  //   dir: "https://selar.co/a6s16j",
+  // },
 
   {
     item: "10 kg Washing Machine  ",
@@ -103,12 +103,12 @@ export const Data = [
     dir: "https://selar.co/y3n6r6",
   },
 
-  {
-    item: "Set of Kitchen Knives  ",
-    image: "/wishlist/knife.webp",
-    amount: "₦20,000",
-    dir: "https://selar.co/450016",
-  },
+  // {
+  //   item: "Set of Kitchen Knives  ",
+  //   image: "/wishlist/knife.webp",
+  //   amount: "₦20,000",
+  //   dir: "https://selar.co/450016",
+  // },
 
   {
     item: "Rechargable Standing Fan",
