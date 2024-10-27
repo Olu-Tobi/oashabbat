@@ -240,7 +240,13 @@ const JourneyImage = () => {
               </CircleDiv>
             ))}
           </Inner>
-          <Img src="/6.webp" width={2000} height={2000} alt="image" />
+          <Img
+            src="/6.webp"
+            width={2000}
+            height={2000}
+            alt="image"
+            loading="lazy"
+          />
         </PictureDiv>
       </Wrapper>
 

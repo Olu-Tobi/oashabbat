@@ -139,6 +139,14 @@ const Desc = styled.p`
   }
 `;
 
+const A = styled.a`
+  width: 10rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Btn = styled.button`
   display: flex;
   align-items: center;
@@ -219,9 +227,9 @@ const Story = () => {
               <br />
               #OASHABBAT'24
             </Desc>
-            <a href="/our-story">
+            <A href="/our-story">
               <Btn>OUR STORY</Btn>
-            </a>
+            </A>
           </Left>
           <Right ref={rightRef} inView={rightInView}>
             <BGImage
@@ -229,6 +237,7 @@ const Story = () => {
               width={2000}
               height={2000}
               alt="image"
+              loading="lazy"
             />
           </Right>
         </StoryDiv>

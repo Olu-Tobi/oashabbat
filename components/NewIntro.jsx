@@ -214,6 +214,7 @@ const NewIntro = () => {
         alt="image"
         isLoaded={isLoaded}
         onLoad={handleImageLoad}
+        priority
       />
       <Layer />
       {!isLoading && (

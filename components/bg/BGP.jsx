@@ -136,11 +136,11 @@ const Grid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 748px) {
     //grid-template-columns: 1fr;
     grid-template-columns: repeat(2, 1fr);
   }
@@ -222,6 +222,7 @@ const Bgp = () => {
                 alt={item.name}
                 width={2000}
                 height={2000}
+                loading="lazy"
               />
               <Name>{item.name}</Name>
               <Role>{item.role}</Role>
@@ -398,6 +399,11 @@ const groomsMen = [
   {
     image: "/grooms/pog.webp",
     name: "Odediran PraiseofGod",
+    role: "Groomsman",
+  },
+  {
+    image: "/grooms/zac.webp",
+    name: "Oluwasegun Zacheus",
     role: "Groomsman",
   },
 ];

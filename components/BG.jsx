@@ -198,6 +198,7 @@ const BG = () => {
               width={800}
               height={800}
               alt="image"
+              loading="lazy"
             />
             <Id>
               <Name
@@ -225,6 +226,7 @@ const BG = () => {
               width={800}
               height={800}
               alt="image"
+              loading="lazy"
             />
             <Id>
               <Name

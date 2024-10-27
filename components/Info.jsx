@@ -60,6 +60,7 @@ const Bottom = styled.div`
   @media screen and (max-width: 748px) {
     width: 90%;
     padding: unset;
+    gap: 2rem;
   }
 `;
 const Det = styled.div`

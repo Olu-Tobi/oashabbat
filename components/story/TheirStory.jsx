@@ -32,7 +32,7 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  @media screen and (max-width: 748px) {
+  @media screen and (max-width: 1024px) {
     margin: 4rem 0 4rem;
   }
 `;
@@ -56,6 +56,7 @@ const Wrapper = styled.div`
 
 const Left = styled.div`
   width: 48%;
+  height: 40rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -66,6 +67,12 @@ const Left = styled.div`
 
   @media screen and (max-width: 1024px) {
     width: 100%;
+    height: 45rem;
+  }
+
+  @media screen and (max-width: 748px) {
+    width: 100%;
+    height: 30rem;
   }
 `;
 
@@ -97,7 +104,6 @@ const BGImage = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 0 -20px;
 `;
 
 const TheirStory = () => {
@@ -118,8 +124,14 @@ const TheirStory = () => {
   return (
     <Div>
       <Wrapper>
-        <Left ref={leftRef1} inView={leftInView1} height="30rem">
-          <BGImage src="/5.webp" width={2000} height={2000} alt="image" />
+        <Left ref={leftRef1} inView={leftInView1}>
+          <BGImage
+            src="/5.webp"
+            width={2000}
+            height={2000}
+            alt="image"
+            loading="lazy"
+          />
         </Left>
         <Right ref={rightRef1} inView={rightInView1}>
           <Names>His Story</Names>
@@ -158,12 +170,13 @@ const TheirStory = () => {
       </Wrapper>
 
       <Wrapper>
-        <Left ref={leftRef2} inView={leftInView2} height="30rem">
+        <Left ref={leftRef2} inView={leftInView2}>
           <BGImage
             src="/journey/20233.webp"
             width={2000}
             height={2000}
             alt="image"
+            loading="lazy"
           />
         </Left>
         <Right ref={rightRef2} inView={rightInView2}>
