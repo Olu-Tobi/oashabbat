@@ -176,7 +176,7 @@ const BG = () => {
 
   return (
     <Div>
-      <BackImg src="/back.jpg" width={2000} height={2000} alt="image" />
+      <BackImg src="/back.webp" width={2000} height={2000} alt="image" />
       <Wrapper>
         <Heading>
           <H2 className="ds-font">Bridesmaids & Groomsmen</H2>
