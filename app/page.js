@@ -13,6 +13,8 @@ import TimerEle from "@/components/TimerEle";
 
 import { useState } from "react";
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 export default function Home() {
   const [option, setOption] = useState("Home");
 
