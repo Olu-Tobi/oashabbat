@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  height: 28rem;
+  height: 30rem;
 
   @media screen and (max-width: 748px) {
     height: unset;
@@ -50,19 +50,25 @@ const Top = styled.div`
 `;
 const Bottom = styled.div`
   display: flex;
+  flex-direction:column;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
   background: #fff;
-  width: 20rem;
-  height: 5rem;
-  padding: 0 3rem;
+  width: 25rem;
+  padding: 2rem 3rem;
   @media screen and (max-width: 748px) {
     width: 90%;
     padding: unset;
     gap: 2rem;
   }
 `;
+const TopB = styled.div`
+display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+`
 const Det = styled.div`
   display: flex;
   flex-direction: column;
@@ -161,6 +167,7 @@ const Info = () => {
           </Det>
         </Top>
         <Bottom>
+          <TopB>
           <Btn
             background="#C5D87C"
             color="#000"
@@ -184,6 +191,18 @@ const Info = () => {
               Gift Us
             </Btn>
           </Link>
+          </TopB>
+          <a href="/shabbat-times-programme.pdf" download="shabbat-times-programme.pdf" type="download">
+            <Btn
+              background="#45144C"
+              color="#fff"
+              back="#45144C"
+              style={{ width: "14rem" }}
+            >
+              
+              Download Programme
+            </Btn>
+          </a>
         </Bottom>
       </Wrapper>
     </Div>
